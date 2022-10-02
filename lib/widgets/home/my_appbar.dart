@@ -16,10 +16,11 @@ class MyAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BigText(
                 text: title,
-                fontSize: 40.0,
+                fontSize: 50.0,
                 colors: Colors.greenAccent,
               ),
               SmallText(
