@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/dimension.dart';
 
 import '../big_text.dart';
 import '../small_text.dart';
@@ -20,7 +21,7 @@ class MyAppBar extends StatelessWidget {
             children: [
               BigText(
                 text: title,
-                fontSize: 50.0,
+                fontSize: Dimensions.height50,
                 colors: Colors.greenAccent,
               ),
               SmallText(
@@ -30,16 +31,17 @@ class MyAppBar extends StatelessWidget {
           ),
           Center(
             child: Container(
-              height: 45.0,
-              width: 45.0,
+              height: Dimensions.height45,
+              width: Dimensions.height45,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(color: Colors.greenAccent, width: 4.0),
+                borderRadius: BorderRadius.circular(Dimensions.height10),
+                border: Border.all(
+                    color: Colors.greenAccent, width: Dimensions.height03),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.search,
                 color: Colors.white,
-                size: 26.0,
+                size: Dimensions.height25,
               ),
             ),
           ),

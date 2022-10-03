@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/dimension.dart';
 import './small_text.dart';
 
 // ignore: must_be_immutable
@@ -13,7 +14,7 @@ class IconText extends StatelessWidget {
     required this.iconData,
     required this.text,
     required this.iconColor,
-    this.iconsize = 14.0,
+    this.iconsize = 0.0,
   }) : super(key: key);
 
   @override
@@ -23,10 +24,10 @@ class IconText extends StatelessWidget {
         Icon(
           iconData,
           color: iconColor,
-          size: iconsize,
+          size: iconsize == 0.0 ? Dimensions.height15 : iconsize,
         ),
-        const SizedBox(
-          width: 5.0,
+        SizedBox(
+          width: Dimensions.width05,
         ),
         SmallText(
           text: text,

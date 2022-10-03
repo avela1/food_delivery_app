@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/dimension.dart';
 
 import '../big_text.dart';
 import '../icon_text.dart';
@@ -16,7 +17,7 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
   var _currentPage = 0.0;
   final _scaleFactor = 0.8;
-  final _height = 220;
+  final _height = Dimensions.pageviewContainer;
   @override
   void initState() {
     _pageController.addListener(() {
@@ -38,7 +39,7 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
     return Column(
       children: [
         SizedBox(
-          height: 320.0,
+          height: Dimensions.pageview,
           child: PageView.builder(
               itemCount: 5,
               controller: _pageController,
@@ -91,14 +92,15 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
       child: Stack(
         children: [
           Container(
-            height: 220.0,
+            height: Dimensions.pageviewContainer,
             width: double.infinity,
-            margin: const EdgeInsets.only(left: 10.0, right: 10.0),
+            margin: EdgeInsets.only(
+                left: Dimensions.height10, right: Dimensions.height10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(Dimensions.height20),
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(Dimensions.height20),
               child: Image.asset(
                 'assets/image/food0.png',
                 fit: BoxFit.cover,
@@ -108,12 +110,14 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-                height: 120.0,
+                height: Dimensions.pageviewTextContainer,
                 width: double.infinity,
-                margin: const EdgeInsets.only(
-                    left: 35.0, right: 35.0, bottom: 35.0),
+                margin: EdgeInsets.only(
+                    left: Dimensions.height35,
+                    right: Dimensions.height35,
+                    bottom: Dimensions.height35),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(Dimensions.height20),
                     // color: const Color.fromARGB(0, 0, 233, 0),
                     color: Colors.black,
                     boxShadow: const [
@@ -128,32 +132,32 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
                       ),
                     ]),
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(Dimensions.height15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       BigText(text: 'Chinese Food'),
-                      const SizedBox(
-                        height: 5,
+                      SizedBox(
+                        height: Dimensions.height05,
                       ),
                       Row(
                         children: <Widget>[
                           Wrap(
                             children: List.generate(
                               5,
-                              (index) => const Icon(
+                              (index) => Icon(
                                 Icons.star,
-                                size: 15,
+                                size: Dimensions.height15,
                                 color: Colors.greenAccent,
                               ),
                             ),
                           ),
-                          const SizedBox(width: 2.0),
+                          SizedBox(width: Dimensions.width02),
                           SmallText(text: "4.5"),
-                          const SizedBox(width: 10.0),
+                          SizedBox(width: Dimensions.width10),
                           SmallText(text: "1280"),
-                          const SizedBox(width: 2.0),
+                          SizedBox(width: Dimensions.width02),
                           SmallText(text: "comments"),
                         ],
                       ),

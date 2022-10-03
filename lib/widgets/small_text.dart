@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utils/dimension.dart';
+
 // ignore: must_be_immutable
 class SmallText extends StatelessWidget {
   final String text;
@@ -11,7 +13,7 @@ class SmallText extends StatelessWidget {
     Key? key,
     required this.text,
     this.colors = Colors.grey,
-    this.fontSize = 14.0,
+    this.fontSize = 0.0,
     this.height = 1.2,
   }) : super(key: key);
 
@@ -20,7 +22,7 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.aBeeZee(
-        fontSize: fontSize,
+        fontSize: fontSize == 0.0 ? Dimensions.height15 : fontSize,
         fontStyle: FontStyle.italic,
         color: colors,
       ).copyWith(
