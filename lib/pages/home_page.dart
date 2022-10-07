@@ -15,56 +15,57 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: const Color(0x0000e900),
-          body: Column(
-            children: [
-              const MyAppBar(title: 'Order Food'),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      const PageViewBuilder(),
-                      SizedBox(
-                        height: Dimensions.height15,
+        backgroundColor: const Color(0x0000e900),
+        body: Column(
+          children: [
+            const MyAppBar(title: 'Order Food'),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const PageViewBuilder(),
+                    SizedBox(
+                      height: Dimensions.height15,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: Dimensions.height20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: <Widget>[
+                          BigText(text: 'Populars'),
+                          SizedBox(
+                            width: Dimensions.height05,
+                          ),
+                          Container(
+                            margin:
+                                EdgeInsets.only(bottom: Dimensions.height05),
+                            child: BigText(
+                              text: '.',
+                              colors: Colors.grey,
+                            ),
+                          ),
+                          SizedBox(
+                            width: Dimensions.height05,
+                          ),
+                          Container(
+                            margin:
+                                EdgeInsets.only(bottom: Dimensions.height10),
+                            child: SmallText(
+                              text: 'Food Paring',
+                              fontSize: Dimensions.height10,
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        margin: EdgeInsets.only(left: Dimensions.height20),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: <Widget>[
-                            BigText(text: 'Populars'),
-                            SizedBox(
-                              width: Dimensions.height05,
-                            ),
-                            Container(
-                              margin:
-                                  EdgeInsets.only(bottom: Dimensions.height05),
-                              child: BigText(
-                                text: '.',
-                                colors: Colors.grey,
-                              ),
-                            ),
-                            SizedBox(
-                              width: Dimensions.height05,
-                            ),
-                            Container(
-                              margin:
-                                  EdgeInsets.only(bottom: Dimensions.height10),
-                              child: SmallText(
-                                text: 'Food Paring',
-                                fontSize: Dimensions.height10,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const ListviewBuilder(),
-                    ],
-                  ),
+                    ),
+                    const ListviewBuilder(),
+                  ],
                 ),
               ),
-            ],
-          )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
